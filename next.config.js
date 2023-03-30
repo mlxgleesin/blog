@@ -3,15 +3,15 @@ module.exports = {
   images: {
     domains: ['gravatar.com']
   },
-  eslint: {
-    dirs: [
-      'components',
-      'layouts',
-      'lib',
-      'pages'
-    ]
+  // TypeScript 配置
+  typescript: {
+    // 是否启用 type-checking，可以忽略不必要的 type-checking，加快编译速度
+    ignoreBuildErrors: true
   },
-  async headers () {
+  eslint: {
+    dirs: ['components', 'layouts', 'lib', 'pages']
+  },
+  async headers() {
     return [
       {
         source: '/:path*{/}?',

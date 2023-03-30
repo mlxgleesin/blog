@@ -5,7 +5,7 @@ import Pagination from '@/components/Pagination'
 import { getAllPosts } from '@/lib/notion'
 import BLOG from '@/blog.config'
 
-export async function getStaticProps () {
+export async function getStaticProps() {
   const posts = await getAllPosts({ includePages: false })
   const postsToShow = posts.slice(0, BLOG.postsPerPage)
   const totalPosts = posts.length
@@ -24,7 +24,7 @@ const blog = ({ postsToShow, page, showNext }) => {
   return (
     <ThemeProvider>
       <Container title={BLOG.title} description={BLOG.description}>
-        {postsToShow.map(post => (
+        {postsToShow.map((post) => (
           <BlogPost key={post.id} post={post} />
         ))}
         {showNext && <Pagination page={page} showNext={showNext} />}
