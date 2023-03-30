@@ -3,6 +3,8 @@
 /.pnp
 .pnp.js
 
+# development
+/.next
 # testing
 /coverage
 
